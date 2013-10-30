@@ -1,0 +1,28 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:entry title="${%Report files}" field="glob">
+    <f:textbox />
+  </f:entry>
+  <f:entry title="${%JFR Events}" field="jfrEventSettingStr">
+    <f:textbox />
+  </f:entry>
+  <f:entry title="${%Graph Title:}" help="/plugin/hudson-jfr/graph-help.html">
+    	<table width="100%">
+    		<tr width="100%">
+    			<td width="488">
+    				<f:textbox field="title" width="488"/>
+    			</td>
+    			<td width="10"></td>
+    			<td style="vertical-align:middle">${%Width}:</td>
+    			<td>
+    				<f:textbox field="width" width="100"/>
+    			</td>
+    			<td width="10"></td>
+    			<td style="vertical-align:middle">${%Height}:</td>
+    			<td>
+    				<f:textbox field="height" width="100"/>
+    			</td>
+    		</tr>
+    	</table>
+  </f:entry>
+</j:jelly>

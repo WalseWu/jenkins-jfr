@@ -1,0 +1,16 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <l:layout xmlns:jm="/hudson/plugins/jfr/tags" css="/plugin/jfr-plugin/css/style.css">
+  <st:include it="${it.build}" page="sidepanel.jelly" />
+    <l:main-panel>
+    	<h1>JFR Report</h1>
+         <j:forEach var="jfrReport" items="${it.getJFRListOrdered()}">
+         	<a href="./jfrEventTimeGraph?height=-1&amp;width=-1&amp;jfrReportPosition=${jfrReport.getReportFileName()}" 
+         		target="_blank" title="${%Click for larger image}">
+            	<h2>${jfrReport.getReportFileName()}</h2>
+            </a>
+    		<object data="./jfrEventTimeGraph?jfrReportPosition=${jfrReport.getReportFileName()}" width="${jfrReport.getWidth()}" height="${jfrReport.getHeight()}" />
+        </j:forEach>
+    </l:main-panel>
+  </l:layout>
+</j:jelly>
