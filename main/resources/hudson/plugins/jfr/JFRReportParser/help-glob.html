@@ -1,0 +1,17 @@
+<div>
+<p>
+  Specify the path pattern to the JRockit Flight Recording report files, relative to the <a href='ws/'>workspace root</a>.
+</p>
+<ul>
+    <li>You can specify one pattern here for directorys or files.
+    <li>You could use an Ant 'fileset' pattern.
+    <li>Files has same pattern will be merged in one graph, e.g. if the pattern like **/a.b.c.Alltests-*.jfr, then a.b.c.Alltests-node1.jfr and a.b.c.Alltests-node2.jfr will be merged.
+</ul>
+<p>
+  Default Values are:
+</p>
+<ul>
+    <li> **/*.jfr, which means all jfr files will be merged in one graph.
+</ul>
+
+</div>
