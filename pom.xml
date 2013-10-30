@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+	    <groupId>org.jenkins-ci.plugins</groupId>
+	    <artifactId>plugin</artifactId>
+	    <version>1.509</version>
+    </parent>
+    <groupId>hudson.plugins.jfr</groupId>
+    <artifactId>jenkins-jfr</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>hpi</packaging>
+    <name>Jenkins JFR Plugin</name>
+ <dependencies>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymockclassextension</artifactId>
+      <version>2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+   	<groupId>jrockit.mc.labs</groupId>
+    	<artifactId>com.jrockit.mc.common</artifactId>
+    	<version>5.2.0</version>
+    	<scope>system</scope>
+    	<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/com.jrockit.mc.common_5.2.0.156746.jar</systemPath>
+    </dependency>
+    <dependency>
+   	<groupId>jrockit.mc.labs</groupId>
+    	<artifactId>com.jrockit.mc.flightrecorder</artifactId>
+    	<version>5.2.0</version>
+    	<scope>system</scope>
+    	<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/com.jrockit.mc.flightrecorder_5.2.0.156746.jar</systemPath>
+    </dependency>
+<!-- Batik Graph -->
+	<!-- Only need svggen and dom for generating sgv image from JFreeChart -->
+    <dependency>
+	 <groupId>org.apache.xmlgraphics</groupId>
+	 <artifactId>batik-svggen</artifactId>
+	 <version>1.7</version>
+    </dependency>
+    <dependency>
+     	 <groupId>org.apache.xmlgraphics</groupId>
+     	 <artifactId>batik-dom</artifactId>
+     	 <version>1.7</version>
+   </dependency>
+    <dependency>
+	<groupId>org.jfree</groupId>
+	<artifactId>jfreechart</artifactId>
+	<version>1.0.14</version>
+   </dependency>
+   <dependency> 
+       <groupId>net.sf.opencsv</groupId> 
+       <artifactId>opencsv</artifactId> 
+       <version>1.7</version> 
+   </dependency> 
+</dependencies>
+
+<repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
